@@ -1,0 +1,18 @@
+{
+	"name": "shopim",
+	"description": "open source shopim for b2b, b2c, c2c sites",
+	"keywords": ["shopim"],
+	"homepage": "http://www.webim20.cn",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Ery Lee",
+			"email": "ery.lee@gmail.com"
+		}
+	],
+	"require" : {
+		"slim/slim": "2.*",
+		"slim/extras": "2.*",
+		"twig/twig": "1.*"
+	}
+}
