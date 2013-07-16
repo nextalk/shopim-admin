@@ -13,6 +13,9 @@ $app = new \Slim\Slim(array(
 	))
 ));
 
+$app->add(new \Slim\Middleware\SessionCookie(
+	array('secret' => 'shopim')));
+
 \Slim\Extras\Views\Twig::$twigOptions = array(
 	'charset' => 'utf-8',
 	'cache' => realpath('templates/cache'),
