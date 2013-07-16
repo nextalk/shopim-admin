@@ -24,7 +24,7 @@ $app->hook('slim.before.dispatch', function() use ($app) {
 });
 
 
-$app->get('/login', function() {
+$app->get('/login', function() use($app) {
    $flash = $app->view()->getData('flash');
 
    $error = '';
@@ -56,7 +56,7 @@ $app->get('/login', function() {
       $password_error = $flash['errors']['password'];
    }
 
-   $app->render('login.php', array('error' => $error, 'username_value' => $username_value, 'username_error' => $username_error, 'password_error' => $password_error, 'urlRedirect' => $urlRedirect));
+   $app->render('login.html', array('error' => $error, 'username_value' => $username_value, 'username_error' => $username_error, 'password_error' => $password_error, 'urlRedirect' => $urlRedirect));
 
 });
 
@@ -101,7 +101,7 @@ $app->get("/", $login_required($app), function () use ($app) {
     $app->render('index.html');
 });
 
-$app->get('/users', $login_required($app), function() use（$app) {
+$app->get('/users', $login_required($app), function() use($app) {
 	$users = array();
 	$app->render('users.html', array('users' => $users));
 });
@@ -111,11 +111,11 @@ $app->get('/chats', $login_required($app), function() use($app) {
 	echo "chats...";
 });
 
-$app->get('/robots', $login_required($app), function()  use($app) {
+$app->get('/robots', $login_required($app), function() use($app) {
 
 });
 
-$app->get('/setting', $login_required($app), function()  use($app) {
+$app->get('/setting', $login_required($app), function() use($app) {
 	echo "setting...";
 });
 

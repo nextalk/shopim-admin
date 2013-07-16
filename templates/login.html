@@ -41,13 +41,14 @@
 {% block container %} 
 
 <form class="form-signin">
-	<h2 class="form-signin-heading">Please sign in</h2>
-	<input type="text" class="input-block-level" placeholder="Email address">
-	<input type="password" class="input-block-level" placeholder="Password">
+	<h2 class="form-signin-heading">企业管理人员登陆</h2>
+	<input id="eid" type="text" class="input-block-level" placeholder="企业号">
+	<input id="username" type="text" class="input-block-level" placeholder="工号">
+	<input id="password" type="password" class="input-block-level" placeholder="密码">
 	<label class="checkbox">
-	  <input type="checkbox" value="remember-me"> Remember me
+	  <input id="remember" type="checkbox" value="remember-me"> 记住我
 	</label>
-	<button class="btn btn-large btn-primary" type="submit">Sign in</button>
+	<button class="btn btn-large btn-primary" type="submit">登录</button>
 </form>
 
 {% endblock %}
